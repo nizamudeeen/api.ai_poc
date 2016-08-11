@@ -34,7 +34,7 @@ def processRequest(req):
     res = makeWebhookResult()
     return res
 
-def makeWebhookResult(data):
+def makeWebhookResult():
    
 
     speech = "Today in "
