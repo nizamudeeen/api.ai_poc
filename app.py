@@ -31,21 +31,8 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "planAlertFinder":
         return {}
-    result = "Hello"
-    data = json.loads(result)
-    res = makeWebhookResult(data)
+    res = makeWebhookResult()
     return res
-
-
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    if city is None:
-        return None
-
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
 
 def makeWebhookResult(data):
    
