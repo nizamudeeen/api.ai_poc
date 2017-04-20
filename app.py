@@ -29,7 +29,7 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") != "planAlertFinder":
+    if req.get("result").get("action") != "planAlertFinder1":
         return {}
     res = makeWebhookResult()
     return res
